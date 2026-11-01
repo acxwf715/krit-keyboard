@@ -1,0 +1,10 @@
+c Krit two-set touch keyboard source, v2.2
+c Touch U_xxxx keys emit their Unicode characters directly.
+store(&VERSION) '15.0'
+store(&NAME) 'Krit Two-Set'
+store(&KEYBOARDVERSION) '2.2'
+store(&TARGETS) 'iphone ipad androidphone androidtablet web'
+store(&LAYOUTFILE) 'krit.keyman-touch-layout'
+begin Unicode > use(main)
+group(main) using keys
+  + [K_SPACE] > ' '
