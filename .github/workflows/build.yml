@@ -25,15 +25,12 @@ jobs:
       - name: Compile keyboard
         run: kmc build krit.kmn
 
-      - name: Upload build results
-        if: always()
+      - name: Build installation package
+        run: kmc build krit.kps
+
+      - name: Upload package
         uses: actions/upload-artifact@v4
         with:
-          name: krit-build-results
-          path: |
-            *.js
-            *.kmx
-            *.kvk
-            *.kmp
-            *.kps
-          if-no-files-found: warn
+          name: Krit-iPhone-Keyboard
+          path: '*.kmp'
+          if-no-files-found: error
