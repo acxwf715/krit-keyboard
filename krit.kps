@@ -1,0 +1,27 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<Package>
+  <Info>
+    <Name>Krit Two-Set</Name>
+    <Version>2.2</Version>
+    <Author>Krit Keyboard</Author>
+  </Info>
+  <Files>
+    <File>
+      <Name>krit.js</Name>
+      <Description>Krit mobile keyboard</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.js</FileType>
+    </File>
+  </Files>
+  <Keyboards>
+    <Keyboard>
+      <Name>Krit Two-Set</Name>
+      <ID>krit</ID>
+      <Version>2.2</Version>
+      <Languages>
+        <Language ID="und">Krit</Language>
+      </Languages>
+    </Keyboard>
+  </Keyboards>
+</Package>
