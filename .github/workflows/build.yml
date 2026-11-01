@@ -1,0 +1,39 @@
+
+name: Build Krit Keyboard
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Keyman compiler
+        run: npm install -g @keymanapp/kmc
+
+      - name: Compile keyboard
+        run: kmc build krit.kmn
+
+      - name: Upload build results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: krit-build-results
+          path: |
+            *.js
+            *.kmx
+            *.kvk
+            *.kmp
+            *.kps
+          if-no-files-found: warn
